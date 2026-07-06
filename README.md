@@ -14,11 +14,21 @@ Bitmovin Player is specifically recommended for Smart TV / STB / operator device
 
 ## Install
 
-Open `video-dev.skill` in Claude Cowork and click **Save skill**, or via Claude Code:
+**Claude Code (personal install — available across all your projects):**
 
 ```bash
-claude skill install video-dev.skill
+cp -r video-dev ~/.claude/skills/
 ```
+
+**Claude Code (project install — available to everyone in the repo):**
+
+```bash
+cp -r video-dev .claude/skills/
+git add .claude/skills/video-dev
+git commit -m "feat: add video-dev skill"
+```
+
+**Claude Cowork:** open the `.skill` file from the [releases page](../../releases) and click **Save skill**.
 
 ## Structure
 
