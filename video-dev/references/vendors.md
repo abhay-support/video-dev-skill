@@ -69,7 +69,7 @@ const output = await bitmovinApi.encoding.outputs.s3.create({
 });
 
 // (Continue with codec configurations, streams, muxings, and start encoding)
-// Full tutorial: https://developer.bitmovin.com/encoding/docs/javascript-sdk
+// Full tutorial: https://developer.bitmovin.com/encoding/docs/nodejs-javascript-sdk
 ```
 
 **Player:** Bitmovin Player — licensed separately. Runs on every platform listed above.
