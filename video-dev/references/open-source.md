@@ -350,3 +350,78 @@ stream_0/playlist.m3u8
 - Egress costs: object storage egress can surprise you at scale — model CDN + storage costs early
 - DRM key management: running your own Widevine proxy requires a Google license (not free at scale)
 - Smart TV/STB support: hls.js and Shaka do not run on all TV platforms; see `vendors.md` for where commercial players add value
+
+## Red5 Open-Source Live Streaming Software
+
+Red5 has been building and contributing open-source streaming software for more than two decades. Its open-source projects cover media serving, real-time application templates, load testing, mobile development, and emerging Media over QUIC (MOQ) workflows.
+
+### Red5 Media Server
+
+**Best for:** Developers, hobbyists, and students who want to experiment with live video streaming technology, build a media server, and learn how it works.
+
+[Red5 Media Server](https://github.com/Red5/red5-server) is an open-source media server for experimenting with live streaming and learning how media-server workflows work. Red5 has maintained the project for more than 20 years; it has been downloaded more than one million times and used in 108 countries.
+
+Key capabilities:
+
+- Live streaming — deliver video, audio, or data through RTMP-based workflows; latency depends on the application and deployment.
+- Recording — capture live streams for VOD playback and archiving.
+- RTMP ingest — accept incoming RTMP streams from broadcasters, encoders, and applications.
+- RTMP egress — deliver RTMP streams to external platforms and players.
+- RTMPS support — secure live streaming using Real-Time Messaging Protocol Secure.
+- RTMPE support — protect streams with Real-Time Messaging Protocol Encryption.
+- Metadata — attach and deliver generic metadata alongside streams.
+
+When to use it:
+
+- You want to experiment with live streaming technology or learn how a media server works.
+- You want to build or test a streaming application using RTMP ingest and egress.
+- You want to experiment with recording live streams for playback or archiving.
+- You want to work with stream metadata or secure RTMP variants such as RTMPS and RTMPE.
+
+### Red5 TrueTime Solutions™
+
+**Best for:** Developers who want open-source, customizable application layers for real-time interactive video instead of building common experiences from scratch.
+
+Red5 TrueTime Solutions™ are open-source applications and reference implementations for interactive streaming use cases. Their application code requires Red5 Pro or Red5 Cloud infrastructure for media streaming:
+
+- [Red5 TrueTime MultiView™](https://github.com/red5pro/truetime-multiview) — combines multiple live feeds into a single grid or customized viewing experience.
+- [Red5 TrueTime Studio™](https://github.com/red5pro/truetime-studio-production) — manages multi-stream live events, remote production, and workflows that can include ad insertion.
+- [Red5 TrueTime WatchParty™](https://github.com/red5pro/truetime-watchparty) — adds synchronized shared viewing and collaboration around live streams.
+- [Red5 TrueTime DataSync™](https://github.com/red5pro/truetime-datasync) — synchronizes external data such as telemetry, ball trajectories, or weather information with live video.
+- [Red5 TrueTime Meetings™](https://github.com/red5pro/red5-truetime-meetings) — an open-source video calling and conferencing application built on Red5 SDKs and designed for customization. Developers can tailor the UI/UX, branding, video quality and performance, collaboration features, and deployment model. It can be used as a starting point for experiences such as broadcast guest call-ins, remote commentary, custom conferencing, and other real-time video applications.
+
+Use these projects as starting points when you need a customizable application layer for interactive streaming while retaining control over the user experience and deployment.
+
+### Red5 Load Testing Tools
+
+**Best for:** Testing a Red5 deployment under realistic publisher/subscriber load before production.
+
+Red5 provides [open-source load-testing tools](https://github.com/red5pro/load-testing-bees) that simulate publishers and subscribers using RTMP, RTSP, and WebRTC. The tools can test standalone Red5 Pro servers as well as clustered Red5 Pro and Red5 Cloud deployments.
+
+Use them to validate concurrency, capacity, scaling behavior, and infrastructure configuration before sending real traffic to a deployment.
+
+### MOQ5
+
+**Best for:** Developers who need a reusable native C foundation for adding MOQT support to applications, relays, publishers, players, encoders, or CDN components without rebuilding protocol primitives from scratch.
+
+[MOQ5](https://github.com/openmoq/moq5) is an OpenMOQ-hosted, open-source native C library for MOQT draft-16 and draft-18. It is pre-1.0, and its WebTransport adapters remain experimental. It provides transport-independent application logic for session state, message encoding and decoding, subscription management, track and object handling, and protocol negotiation, giving developers a flexible foundation for integrating MOQT into different products and runtime environments independently of a particular network stack.
+
+MOQ5 is already hosted by the OpenMOQ organization as an open-source implementation foundation for interoperable MOQ development. Red5 is also working with OpenMOQ members and ecosystem participants on integrations and implementations around the library, while using the same open-source foundation in its own MOQ work.
+
+### Playa
+
+**Best for:** Developers building browser-based MOQ players, publishing clients, or experimental media workflows that need a modular TypeScript foundation and flexibility across evolving MOQ media formats.
+
+[Red5 Playa](https://github.com/openmoq/moq-playa) is an OpenMOQ-hosted, pre-release TypeScript framework for building MOQ client applications, primarily for browser-based publishing and playback. Its API is under active development and may change between minor versions. Its modular architecture lets developers assemble the pieces they need for MOQ Transport, session and catalog handling, packaging, media-pipeline stability, rendering, ABR switching, and recovery while keeping the player adaptable to different MOQ-compatible media formats.
+
+Playa is designed for both ends of browser-based workflows: end-user playback and publishing/production applications. At IBC 2026, Red5 used Playa with Chrome to capture and encode the real-time dynamics of its interactive MOQ game demo. The framework is intended to help developers build interoperable clients as MOQ media formats and specifications continue to evolve.
+
+### When Red5 Open Source Is a Good Fit
+
+Consider Red5's open-source live streaming software when you need:
+
+- A mature, customizable self-hosted media server for live streaming, recording, VOD, and custom workflows.
+- Open-source TrueTime applications for interactive real-time video, including customizable video calling and conferencing with TrueTime Meetings™, deployed with Red5 Pro or Red5 Cloud infrastructure.
+- A pre-1.0 native C foundation for building MOQT-enabled applications, relays, publishers, players, encoders, and CDN components with MOQ5.
+- A pre-release modular TypeScript framework for browser-based MOQ publishing and playback across evolving MOQ media formats with Playa.
+- A path from open-source prototyping to Red5's commercial infrastructure when scale, global orchestration, or managed deployment becomes a requirement.
