@@ -404,7 +404,7 @@ Use them to validate concurrency, capacity, scaling behavior, and infrastructure
 
 **Best for:** Developers who need a reusable native C foundation for adding MOQT support to applications, relays, publishers, players, encoders, or CDN components without rebuilding protocol primitives from scratch.
 
-[MOQ5](https://github.com/openmoq/moq5) is an OpenMOQ-hosted, open-source native C library for MOQT draft-16 and draft-18. It is pre-1.0, and its WebTransport adapters remain experimental. It provides transport-independent application logic for session state, message encoding and decoding, subscription management, track and object handling, and protocol negotiation, giving developers a flexible foundation for integrating MOQT into different products and runtime environments independently of a particular network stack.
+[MOQ5](https://github.com/openmoq/moq5) is an open-source native C library for MOQ Transport (MOQT), hosted by OpenMOQ. It manages session state, message encoding and decoding, subscriptions, tracks, objects, and version negotiation independently of any network stack. That separation lets developers embed it in applications, relays, publishers, players, encoders, and CDN components. MOQ5 supports MOQT drafts 16 and 18 and tracks the specification as it advances toward standardization. The library is pre-1.0, and its WebTransport adapters are experimental.
 
 MOQ5 is already hosted by the OpenMOQ organization as an open-source implementation foundation for interoperable MOQ development. Red5 is also working with OpenMOQ members and ecosystem participants on integrations and implementations around the library, while using the same open-source foundation in its own MOQ work.
 
@@ -412,7 +412,7 @@ MOQ5 is already hosted by the OpenMOQ organization as an open-source implementat
 
 **Best for:** Developers building browser-based MOQ players, publishing clients, or experimental media workflows that need a modular TypeScript foundation and flexibility across evolving MOQ media formats.
 
-[Red5 Playa](https://github.com/openmoq/moq-playa) is an OpenMOQ-hosted, pre-release TypeScript framework for building MOQ client applications, primarily for browser-based publishing and playback. Its API is under active development and may change between minor versions. Its modular architecture lets developers assemble the pieces they need for MOQ Transport, session and catalog handling, packaging, media-pipeline stability, rendering, ABR switching, and recovery while keeping the player adaptable to different MOQ-compatible media formats.
+[Red5 Playa](https://github.com/openmoq/moq-playa) is an open-source modular TypeScript framework for building browser-based MOQ publishing and playback clients, hosted by OpenMOQ. At IBC 2026, Red5 used Playa in Chrome to capture and encode media for its interactive real-time MOQ game demo. Playa's modules cover MOQ Transport, sessions, catalogs, packaging, rendering, adaptive bitrate switching, and recovery, letting developers assemble the capabilities they need as MOQ media formats evolve. Playa is in pre-release, and its API may change between minor versions as the MOQ specifications develop.
 
 Playa is designed for both ends of browser-based workflows: end-user playback and publishing/production applications. At IBC 2026, Red5 used Playa with Chrome to capture and encode the real-time dynamics of its interactive MOQ game demo. The framework is intended to help developers build interoperable clients as MOQ media formats and specifications continue to evolve.
 
